@@ -26,26 +26,24 @@ module.exports = {
 			
 			// Dark
 			dark: {
-				1: '#161610',
-				2: "#938269"
+				1: '#060505',
+				2: "#6F6F6F"
 			},
 
 			// Light
 			light: {
-				1: '#FAF5F0',
-				2: '#DED8CF',
-				3: '#F4E6DC'
+				1: '#FAFAFA',
+				2: '#FFFFFF'
 			},
 
 			// Accent
-			accent: {
-				1: '#2B3ABD',
-			}	
+			accent:  '#2767FE',
 		},
 
 		// Fonts
 		fontFamily: {
-			noto: ["var(--font-noto)"],
+			sans: ["var(--font-sans)"],
+			inter: ["var(--font-inter)"],
 		},
 
 		keyframes: {

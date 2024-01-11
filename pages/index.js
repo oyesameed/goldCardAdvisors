@@ -1,13 +1,84 @@
 // Libraries
+import Chart from "@/ui/chart"
+import Header from "@/ui/header"
+import Hero from "@/ui/hero"
+import Info from "@/ui/info"
 import Page from "@/ui/page"
+import Search from "@/ui/search"
+import Select from "@/ui/select"
 
 // Component
 export default function Home({ font }) {
 
 	// Render
 	return <Page title="Gold Card Advisors" font={font} >
-		<div className="font-noto">
-			Hello world
+
+		{/* Header */}
+		<Header/>
+
+		{/* Body */}
+		<div className="px-32 mt-16">
+
+			<div className="flex justify-between">
+
+				{/* Hero */}
+				<Hero title="Victor Wembanyama" directory="All Cards / Basketball / Victor Wembanyama / 2023 Prizm Draft Picks"/>
+				
+				{/* Search */}
+				<Search/>
+			</div>
+			
+			{/* Categories */}
+			<div className="flex gap-2">
+				<Select selected="PSA9" values={["PSA10", "PSA9", "RAW"]} />
+				<Select selected="Autographs" values={["Base", "Raw"]} />
+			</div>
+
+			<div className="flex mt-20">
+				
+				<div className="w-2/3">
+
+					{/* Infos */}
+					<div className="flex justify-between">
+						<Info value="96,650.23" title="Base index"/>
+						<Info value="669,8" title="Cards in database"/>
+						<Info value="640" title="Tracked cards"/>
+						<Info value="179,1" title="Total sales"/>
+					</div>
+
+					{/* Graph */}
+					<div className="mt-10 px-10 py-6 bg-light-2 w-full h-96 border rounded-md">
+						
+						{/* Info */}
+						<div className="flex flex-col gap-1">
+
+							{/* Value */}
+							<h1 className="font-sans text-base font-medium text-dark-1">Prices overview</h1>
+
+							{/* Title */}
+							<span className="flex gap-2">
+								<img src="images/up.svg" className=""/>
+								<p className="font-inter text-xs text-dark-2 antialiased">4% more in 2023</p>
+							</span>
+							
+						</div>
+
+						{/* Chart */}
+						<div className="mt-4">
+							 <Chart/> 
+						</div>
+
+					</div>
+				</div>
+
+				{/* Card */}
+				<div className="w-1/3 items-end flex flex-col justify-between gap-4">
+					<img src="images/cards/1.jpg" className="w-72 h-auto"/>
+					<a class="inline-block text-center font-sans w-72 rounded border border-accent bg-accent px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-accent focus:outline-none focus:ring active:text-accent" href="/download">Download</a>
+				</div>
+			</div>
+
 		</div>
 	</Page>
 }
+ 

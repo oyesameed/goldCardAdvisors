@@ -17,9 +17,9 @@ export default function Home({ font }) {
 		<Header/>
 
 		{/* Body */}
-		<div className="px-32 mt-16">
+		<div className="px-8 md:px-12 lg:px-32 mt-16">
 
-			<div className="flex justify-between">
+			<div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between">
 
 				{/* Hero */}
 				<Hero title="Victor Wembanyama" directory="All Cards / Basketball / Victor Wembanyama / 2023 Prizm Draft Picks"/>
@@ -34,12 +34,12 @@ export default function Home({ font }) {
 				<Select selected="Autographs" values={["Base", "Raw"]} />
 			</div>
 
-			<div className="flex mt-20">
+			<div className="flex gap-10 mt-20">
 				
-				<div className="w-2/3">
+				<div className="w-full lg:w-2/3">
 
 					{/* Infos */}
-					<div className="flex justify-between">
+					<div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
 						<Info value="96,650.23" title="Base index"/>
 						<Info value="669,8" title="Cards in database"/>
 						<Info value="640" title="Tracked cards"/>
@@ -72,9 +72,9 @@ export default function Home({ font }) {
 				</div>
 
 				{/* Card */}
-				<div className="w-1/3 items-end flex flex-col justify-between gap-4">
+				<div className="w-full lg:w-1/3 items-end flex flex-col justify-between gap-4">
 					<img src="images/cards/1.jpg" className="w-72 h-auto"/>
-					<a class="inline-block text-center font-sans w-72 rounded border border-accent bg-accent px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-accent focus:outline-none focus:ring active:text-accent" href="/download">Download</a>
+					<a className="inline-block text-center font-sans w-72 rounded border border-accent bg-accent px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-accent focus:outline-none focus:ring active:text-accent" href="/">Get card</a>
 				</div>
 			</div>
 

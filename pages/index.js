@@ -17,7 +17,7 @@ export default function Home({ font }) {
 		<Header/>
 
 		{/* Body */}
-		<div className="px-8 md:px-12 lg:px-32 mt-16">
+		<div className="px-8 gap-y-20 md:gap-0 md:px-8 lg:px-24 mt-8 md:mt-16">
 
 			<div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between">
 
@@ -34,9 +34,10 @@ export default function Home({ font }) {
 				<Select selected="Autographs" values={["Base", "Raw"]} />
 			</div>
 
-			<div className="flex gap-10 mt-20">
+			{/* Data section */}
+			<div className="w-full flex flex-col-reverse md:flex-row gap-10 mt-20">
 				
-				<div className="w-full lg:w-2/3">
+				<div className="sm:w-full md:w-2/3">
 
 					{/* Infos */}
 					<div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
@@ -47,7 +48,7 @@ export default function Home({ font }) {
 					</div>
 
 					{/* Graph */}
-					<div className="mt-10 px-10 py-6 bg-light-2 w-full h-96 border rounded-md">
+					<div className="mt-10 h-auto px-6 lg:px-10 py-2 lg:py-6 bg-light-2 w-full h-96 border rounded-md">
 						
 						{/* Info */}
 						<div className="flex flex-col gap-1">
@@ -72,9 +73,11 @@ export default function Home({ font }) {
 				</div>
 
 				{/* Card */}
-				<div className="w-full lg:w-1/3 items-end flex flex-col justify-between gap-4">
-					<img src="images/cards/1.jpg" className="w-72 h-auto"/>
-					<a className="inline-block text-center font-sans w-72 rounded border border-accent bg-accent px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-accent focus:outline-none focus:ring active:text-accent" href="/">Get card</a>
+				<div className="w-full md:w-1/3 md:pl-10 lg:pl-20 flex flex-col items-center md:items-end">
+					<div className="w-64 lg:w-72 flex flex-col justify-end lg:justify-between h-full gap-4">
+						<img src="images/cards/1.jpg" className="w-auto"/>
+						<a className="inline-block w-full text-center font-sans rounded border border-accent bg-accent px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-accent focus:outline-none focus:ring active:text-accent" href="/">Get card</a>
+					</div>
 				</div>
 			</div>
 

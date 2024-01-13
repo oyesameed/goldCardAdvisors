@@ -1,5 +1,7 @@
 // Libraries
+import Card from "@/ui/card"
 import Chart from "@/ui/chart"
+import Footer from "@/ui/footer"
 import Header from "@/ui/header"
 import Hero from "@/ui/hero"
 import Info from "@/ui/info"
@@ -81,7 +83,31 @@ export default function Home({ font }) {
 				</div>
 			</div>
 
+			{/* Top cards */}
+			<div className="my-36">
+
+				{/* Title */}
+				<h1 className="font-sans text-2xl font-medium text-dark-1">Top cards</h1>
+
+				{/* Cards */}
+				{/* <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-10 md:grid-cols-3 lg:grid-cols-4 gap-2"> */}
+				<div className="flex justify-start lg:justify-between flex-wrap gap-2">
+					
+					<Card title={"Victor Wembanyama"} desc={"2023 Hoops Ignition"} image={"1"}/>
+					<Card title={"Cristiano Ronaldo"} desc={"Ultimate Striker Edition"} image={"2"}/>
+					<Card title={"Serena Williams"} desc={"Grand Slam Champion Series"} image={"3"}/>
+					<Card title={"LeBron James"} desc={"King's Court Exclusive"} image={"4"}/>
+					<Card title={"Magnus Carlsen"} desc={"Strategic Brilliance"} image={"5"}/>
+					<Card title={"Neymar Jr."} desc={"Goal-Getter Series"} image={"6"}/>
+					<Card title={"Victor Wembanyama"} desc={"2023 Hoops Ignition"} image={"7"}/>
+					<Card title={"LeBron James"} desc={"King's Court Exclusive"} image={"1"}/>
+					
+				</div>
+			</div>
+
 		</div>
+
+		<Footer/>
 	</Page>
 }
  

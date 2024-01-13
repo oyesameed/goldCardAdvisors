@@ -16,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <div className="font-sans relative border-b">
+    <div id="header" className="font-sans relative border-b">
 
       <div className="mx-auto px-4 md:px-8 lg:px-12">
 

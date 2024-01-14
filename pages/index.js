@@ -8,6 +8,7 @@ import Info from "@/ui/info"
 import Page from "@/ui/page"
 import Search from "@/ui/search"
 import Select from "@/ui/select"
+import Tile from "@/ui/tile"
 
 // Component
 export default function Home({ font }) {
@@ -18,80 +19,67 @@ export default function Home({ font }) {
 		{/* Header */}
 		<Header/>
 
+        {/* Hero */}
+        <section>
+            <div className="mx-auto font-sans max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                    <div className="bg-accent p-8 md:p-12 lg:px-16 lg:py-24">
+
+                        <div className="mx-auto max-w-xl text-left rounded-md">
+
+                            <h2 className="text-2xl font-bold text-white md:text-3xl">
+                                Transforming your Cards into Value
+                            </h2>
+
+                            <p className="hidden font-inter text-white/90 sm:mt-4 sm:block">
+                                Explore, Track, and Trade – Your Ultimate Resource for Sports Card Values
+                                Feel free to customize the title and subtitle to better fit your brand and the specific features you offer on your website.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4 lg:grid-cols-2">
+                        <img
+                            alt="card"
+                            src="images/cards/6.jpg"
+                            className="h-40 w-full object-cover rounded-md sm:h-56 md:h-full"
+                        />
+
+                        <img
+                            alt="card"
+                            src="images/cards/4.jpg"
+                            className="h-40 w-full object-cover rounded-md sm:h-56 md:h-full"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
 		{/* Body */}
 		<div className="px-8 gap-y-20 md:gap-0 md:px-8 lg:px-24 mt-8 md:mt-16">
 
 			<div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between">
 
-				{/* Hero */}
-				<Hero title="Victor Wembanyama" directory="All Cards / Basketball / Victor Wembanyama / 2023 Prizm Draft Picks"/>
-				
+				<div>
+
+                    {/* Hero */}
+                    <Hero title="Top trending cards" directory=""/>
+                    
+                    {/* Description */}
+                    <p className="mx-auto text-sm font-inter mt-6 max-w-md leading-relaxed text-dark-2 text-left">
+                        Elevate Your Experience with Iconic Collectibles. Discover, Trade, and Dominate the Heroic Universe on Our Exclusive Platform.
+                    </p>
+                </div>
+
 				{/* Search */}
 				<Search/>
 			</div>
-			
-			{/* Categories */}
-			<div className="flex gap-2">
-				<Select selected="PSA9" values={["PSA10", "PSA9", "RAW"]} />
-				<Select selected="Autographs" values={["Base", "Raw"]} />
-			</div>
-
-			{/* Data section */}
-			<div className="w-full flex flex-col-reverse md:flex-row gap-10 mt-20">
-				
-				<div className="sm:w-full md:w-2/3">
-
-					{/* Infos */}
-					<div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
-						<Info value="96,650.23" title="Base index"/>
-						<Info value="669,8" title="Cards in database"/>
-						<Info value="640" title="Tracked cards"/>
-						<Info value="179,1" title="Total sales"/>
-					</div>
-
-					{/* Graph */}
-					<div className="mt-10 h-auto px-6 lg:px-10 py-2 lg:py-6 bg-light-2 w-full h-96 border rounded-md">
-						
-						{/* Info */}
-						<div className="flex flex-col gap-1">
-
-							{/* Value */}
-							<h1 className="font-sans text-base font-medium text-dark-1">Prices overview</h1>
-
-							{/* Title */}
-							<span className="flex gap-2">
-								<img src="images/up.svg" className=""/>
-								<p className="font-inter text-xs text-dark-2 antialiased">4% more in 2023</p>
-							</span>
-							
-						</div>
-
-						{/* Chart */}
-						<div className="mt-4">
-							 <Chart/> 
-						</div>
-
-					</div>
-				</div>
-
-				{/* Card */}
-				<div className="w-full md:w-1/3 md:pl-10 lg:pl-20 flex flex-col items-center md:items-end">
-					<div className="w-64 lg:w-72 flex flex-col justify-end lg:justify-between h-full gap-4">
-						<img src="images/cards/1.jpg" className="w-auto"/>
-						<a className="inline-block w-full text-center font-sans rounded border border-accent bg-accent px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-accent focus:outline-none focus:ring active:text-accent" href="/">Get card</a>
-					</div>
-				</div>
-			</div>
 
 			{/* Top cards */}
-			<div className="my-36">
-
-				{/* Title */}
-				<h1 className="font-sans text-2xl font-medium text-dark-1">Top cards</h1>
+			<div className="my-20">
 
 				{/* Cards */}
-				{/* <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-10 md:grid-cols-3 lg:grid-cols-4 gap-2"> */}
-				<div className="flex justify-start lg:justify-between flex-wrap gap-2">
+				<ul class="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					
 					<Card title={"Victor Wembanyama"} desc={"2023 Hoops Ignition"} image={"1"}/>
 					<Card title={"Cristiano Ronaldo"} desc={"Ultimate Striker Edition"} image={"2"}/>
@@ -102,8 +90,55 @@ export default function Home({ font }) {
 					<Card title={"Victor Wembanyama"} desc={"2023 Hoops Ignition"} image={"7"}/>
 					<Card title={"LeBron James"} desc={"King's Court Exclusive"} image={"1"}/>
 					
-				</div>
+				</ul>
 			</div>
+
+            {/* Card by sport */}
+            <div className="flex mt-36 flex-col gap-4 md:gap-0 md:flex-row justify-between">
+
+				<div>
+
+                    {/* Hero */}
+                    <Hero title="Cards by sport" directory=""/>
+                    
+                    {/* Description */}
+                    <p className="mx-auto text-sm font-inter mt-6 max-w-md leading-relaxed text-dark-2 text-left">
+                        Elevate Your Experience with Iconic Collectibles. Discover, Trade, and Dominate the Heroic Universe on Our Exclusive Platform.
+                    </p>
+                </div>
+                
+				{/* Search */}
+				<Search/>
+			</div>
+
+            {/*  Cards */}
+			<div className="mt-20 mb-36">
+
+                {/* Cards */}
+                <ul class="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+                    
+                    <Tile image={"1"} title={"Soccer"} trend={"up"} percentage="11" />
+                    <Tile image={"2"} title={"Cricket"} trend={"up"} percentage="15" />
+                    <Tile image={"3"} title={"Basketball"} trend={"down"} percentage="7" />
+                    <Tile image={"4"} title={"Baseball"} trend={"up"} percentage="9" />
+                    <Tile image={"5"} title={"American Football"} trend={"down"} percentage="5" />
+                    <Tile image={"6"} title={"Tennis"} trend={"up"} percentage="12" />
+                    <Tile image={"7"} title={"Volleyball"} trend={"down"} percentage="8" />
+                    <Tile image={"8"} title={"Golf"} trend={"up"} percentage="10" />
+                    <Tile image={"9"} title={"Hockey"} trend={"down"} percentage="6" />
+                    <Tile image={"1"} title={"Rugby"} trend={"up"} percentage="14" />
+                    <Tile image={"1"} title={"Soccer"} trend={"down"} percentage="4" />
+                    <Tile image={"2"} title={"Cricket"} trend={"up"} percentage="13" />
+                    <Tile image={"3"} title={"Basketball"} trend={"down"} percentage="6" />
+                    <Tile image={"5"} title={"American Football"} trend={"up"} percentage="11" />
+                    <Tile image={"6"} title={"Tennis"} trend={"down"} percentage="7" />
+                    <Tile image={"7"} title={"Volleyball"} trend={"up"} percentage="10" />
+                    <Tile image={"9"} title={"Hockey"} trend={"down"} percentage="5" />
+                    <Tile image={"1"} title={"Rugby"} trend={"up"} percentage="12" />
+
+
+				</ul>
+            </div>
 
 		</div>
 
